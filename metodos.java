@@ -62,11 +62,29 @@ public void LLenarPila(Stack<objPaginaWeb> p, Scanner sc) {
         }
     }
 
-    public void Retroceder(Stack<objPaginaWeb> p){
+   /* public void Retroceder(Stack<objPaginaWeb> p){
       while (!p.isEmpty()) {
         p.peek();
         p.pop();
-      }
+      }*/
+
+    public void Retroceder(Stack<objPaginaWeb> p) {
+    if (p.isEmpty()) {
+        System.out.println("No hay paginas para retroceder");
+        return;
+    }
+
+    p.pop();
+
+    System.out.println("Se retrocedio una pagina");
+
+    if (!p.isEmpty()) {
+        System.out.println("Pagina actual:");
+        System.out.println(p.peek().getTitulo());
+    } else {
+        System.out.println("No hay paginas abiertas");
+    }
+}
     }
 
 }
