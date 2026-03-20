@@ -14,7 +14,7 @@ public class Principal {
         opt = m.menu(sc);
         switch (opt) {
             case 1:
-                m.LLenarPila();
+                m.LLenarPila(p, sc);
                 break;
 
             case 2:
