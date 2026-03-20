@@ -53,15 +53,29 @@ public void LLenarPila(Stack<objPaginaWeb> p, Scanner sc) {
         }
     }
 }
+public void MostrarPila(Stack<objPaginaWeb> p) {
+    if (p.isEmpty()) {
+        System.out.println("No hay historial");
+        return;
+    }
 
-    public void MostrarPila(Stack<objPaginaWeb> p) {
+    System.out.println("HISTORIAL:");
+
+    for (objPaginaWeb o : p) {
+        System.out.println("URL: " + o.getUrl());
+        System.out.println("Titulo: " + o.getTitulo());
+        System.out.println("Fecha: " + o.getFecha());
+        System.out.println("----------------------");
+    }
+}
+  /*  public void MostrarPila(Stack<objPaginaWeb> p) {
         for (objPaginaWeb o : p) {
             System.out.print(" - " + o.getUrl());
             System.out.println(" - " + o.getTitulo());
             System.out.println(" - " + o.getFecha());
         }
     }
-
+*/
    /* public void Retroceder(Stack<objPaginaWeb> p){
       while (!p.isEmpty()) {
         p.peek();
