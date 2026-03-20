@@ -25,32 +25,34 @@ public class metodos {
         return sc.nextInt();
     }
 
-    public Stack<objPaginaWeb> LLenarPila() {
-        Stack<objPaginaWeb> p = new Stack<>();
-        metodos m = new metodos();
-        boolean pedir = true;
-        int opt = 0;
-        while (pedir) {
-            objPaginaWeb o = new objPaginaWeb();
-            System.out.println("Ingrese la URL ");
-            o.setUrl(sc.next());
-            p.push(o);
+public void LLenarPila(Stack<objPaginaWeb> p, Scanner sc) {
+    boolean pedir = true;
+    int opt = 0;
 
-            System.out.println("Ingrese el titulo ");
-            o.setTitulo(sc.next());
-            p.push(o);
+    while (pedir) {
+        objPaginaWeb o = new objPaginaWeb();
 
-            System.out.println("Ingrese la fecha ");
-            o.setFecha(sc.nextInt());
-            p.push(o);
-            System.out.println("desea continuar 1) si , 2) no");
-            opt = m.ValidarEntero(sc);
-            if (opt == 2) {
-                pedir = false;
-            }
+        sc.nextLine(); // limpiar buffer
+
+        System.out.println("Ingrese la URL ");
+        o.setUrl(sc.nextLine());
+
+        System.out.println("Ingrese el titulo ");
+        o.setTitulo(sc.nextLine());
+
+        System.out.println("Ingrese la fecha ");
+        o.setFecha(sc.nextInt());
+
+        p.push(o);
+
+        System.out.println("¿Desea continuar? 1) Si, 2) No");
+        opt = ValidarEntero(sc);
+
+        if (opt == 2) {
+            pedir = false;
         }
-        return p;
     }
+}
 
     public void MostrarPila(Stack<objPaginaWeb> p) {
         for (objPaginaWeb o : p) {
