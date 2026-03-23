@@ -7,31 +7,33 @@ public class Principal {
         metodos m = new metodos();
         Stack<objPaginaWeb> p = new Stack<>();
         boolean seguir = true;
-        int opt = 0;
         while (seguir) {
-            
-        }
-        opt = m.menu(sc);
-        switch (opt) {
-            case 1:
-                m.LLenarPila(p, sc);
-                break;
+    int opt = m.menu(sc);
 
-            case 2:
-                m.MostrarPila(p);
-                break;
+    switch (opt) {
+        case 1:
+            m.LLenarPila(p, sc);
+            break;
 
-            case 3:
-                m.Retroceder(p);
-                break;
+        case 2:
+            m.MostrarPila(p);
+            break;
 
-            case 4:
-                System.out.println("SALIENDO.....");
-                break;
+        case 3:
+            m.Retroceder(p);
+            break;
 
-            default:
-                System.out.println("INGRESE UNA OPCION DEL MENU");
-                break;
-        }
+        case 4:
+            System.out.println("SALIENDO.....");
+            seguir = false; // 👈 IMPORTANTE
+            break;
+
+        default:
+            System.out.println("INGRESE UNA OPCION DEL MENU");
+            break;
     }
 }
+
+        }
+    }
+

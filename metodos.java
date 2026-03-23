@@ -98,7 +98,5 @@ public void MostrarPila(Stack<objPaginaWeb> p) {
     } else {
         System.out.println("No hay paginas abiertas");
     }
-}
-    }
-
+}    
 }
